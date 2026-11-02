@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            style="?attr/collapsingToolbarLayoutMediumStyle"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/collapsingToolbarLayoutMediumSize"
+            android:fitsSystemWindows="true"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
+            app:title="@string/app_name">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:elevation="0dp"
+                app:layout_collapseMode="pin" />
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="16dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="24dp">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/statusCard"
+                style="?attr/materialCardViewFilledStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusable="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="20dp">
+
+                    <ImageView
+                        android:id="@+id/statusIcon"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:importantForAccessibility="no" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/statusTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?attr/textAppearanceTitleMedium" />
+
+                        <TextView
+                            android:id="@+id/statusText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:textAppearance="?attr/textAppearanceBodyMedium" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/primaryAction"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="12dp"
+                android:textAppearance="?attr/textAppearanceTitleSmall"
+                app:iconGravity="textStart"
+                app:iconPadding="12dp" />
+
+            <!-- One column on phones; MainActivity switches to two columns on wide screens. -->
+            <LinearLayout
+                android:id="@+id/columns"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:baselineAligned="false"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/columnLeft"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <!-- Timing -->
+                    <TextView
+                        style="@style/Widget.AutoClicker.SectionTitle"
+                        android:text="@string/section_timing" />
+
+                    <com.google.android.material.card.MaterialCardView style="@style/Widget.AutoClicker.Card">
+
+                        <LinearLayout style="@style/Widget.AutoClicker.CardContent">
+
+                            <LinearLayout style="@style/Widget.AutoClicker.FieldRow">
+
+                                <com.google.android.material.textfield.TextInputLayout
+                                    android:id="@+id/intervalLayout"
+                                    style="@style/Widget.AutoClicker.Field"
+                                    android:hint="@string/interval"
+                                    app:helperText="@string/interval_helper"
+                                    app:suffixText="@string/unit_ms">
+
+                                    <com.google.android.material.textfield.TextInputEditText
+                                        android:id="@+id/interval"
+                                        style="@style/Widget.AutoClicker.NumberInput"
+                                        android:maxLength="7" />
+                                </com.google.android.material.textfield.TextInputLayout>
+
+                                <com.google.android.material.textfield.TextInputLayout
+                                    android:id="@+id/randomIntervalLayout"
+                                    style="@style/Widget.AutoClicker.Field"
+                                    android:layout_marginStart="12dp"
+                                    android:hint="@string/random_interval"
+                                    app:helperText="@string/random_interval_helper"
+                                    app:prefixText="@string/plus_minus"
+                                    app:suffixText="@string/unit_ms">
+
+                                    <com.google.android.material.textfield.TextInputEditText
+                                        android:id="@+id/randomInterval"
+                                        style="@style/Widget.AutoClicker.NumberInput"
+                                        android:maxLength="7" />
+                                </com.google.android.material.textfield.TextInputLayout>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                style="@style/Widget.AutoClicker.FieldRow"
+                                android:layout_marginTop="12dp">
+
+                                <com.google.android.material.textfield.TextInputLayout
+                                    android:id="@+id/holdLayout"
+                                    style="@style/Widget.AutoClicker.Field"
+                                    android:hint="@string/hold"
+                                    app:helperText="@string/hold_helper"
+                                    app:suffixText="@string/unit_ms">
+
+                                    <com.google.android.material.textfield.TextInputEditText
+                                        android:id="@+id/hold"
+                                        style="@style/Widget.AutoClicker.NumberInput"
+                                        android:maxLength="5" />
+                                </com.google.android.material.textfield.TextInputLayout>
+
+                                <com.google.android.material.textfield.TextInputLayout
+                                    android:id="@+id/swipeLayout"
+                                    style="@style/Widget.AutoClicker.Field"
+                                    android:layout_marginStart="12dp"
+                                    android:hint="@string/swipe_duration"
+                                    app:helperText="@string/swipe_duration_helper"
+                                    app:suffixText="@string/unit_ms">
+
+                                    <com.google.android.material.textfield.TextInputEditText
+                                        android:id="@+id/swipe"
+                                        style="@style/Widget.AutoClicker.NumberInput"
+                                        android:maxLength="5" />
+                                </com.google.android.material.textfield.TextInputLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- Run -->
+                    <TextView
+                        style="@style/Widget.AutoClicker.SectionTitle"
+                        android:text="@string/section_run" />
+
+                    <com.google.android.material.card.MaterialCardView style="@style/Widget.AutoClicker.Card">
+
+                        <LinearLayout style="@style/Widget.AutoClicker.CardContent">
+
+                            <LinearLayout style="@style/Widget.AutoClicker.FieldRow">
+
+                                <com.google.android.material.textfield.TextInputLayout
+                                    android:id="@+id/startDelayLayout"
+                                    style="@style/Widget.AutoClicker.Field"
+                                    android:hint="@string/start_delay"
+                                    app:helperText="@string/start_delay_helper"
+                                    app:suffixText="@string/unit_s">
+
+                                    <com.google.android.material.textfield.TextInputEditText
+                                        android:id="@+id/startDelay"
+                                        style="@style/Widget.AutoClicker.NumberInput"
+                                        android:maxLength="4" />
+                                </com.google.android.material.textfield.TextInputLayout>
+
+                                <com.google.android.material.textfield.TextInputLayout
+                                    android:id="@+id/timeLimitLayout"
+                                    style="@style/Widget.AutoClicker.Field"
+                                    android:layout_marginStart="12dp"
+                                    android:hint="@string/time_limit"
+                                    app:helperText="@string/time_limit_helper"
+                                    app:suffixText="@string/unit_s">
+
+                                    <com.google.android.material.textfield.TextInputEditText
+                                        android:id="@+id/timeLimit"
+                                        style="@style/Widget.AutoClicker.NumberInput"
+                                        android:maxLength="6" />
+                                </com.google.android.material.textfield.TextInputLayout>
+                            </LinearLayout>
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/repeatLayout"
+                                style="@style/Widget.AutoClicker.Field"
+                                android:layout_width="match_parent"
+                                android:layout_marginTop="12dp"
+                                android:hint="@string/repeat"
+                                app:helperText="@string/repeat_helper">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/repeat"
+                                    style="@style/Widget.AutoClicker.NumberInput"
+                                    android:maxLength="7" />
+                            </com.google.android.material.textfield.TextInputLayout>
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/columnRight"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <!-- Position -->
+                    <TextView
+                        style="@style/Widget.AutoClicker.SectionTitle"
+                        android:text="@string/section_position" />
+
+                    <com.google.android.material.card.MaterialCardView style="@style/Widget.AutoClicker.Card">
+
+                        <LinearLayout style="@style/Widget.AutoClicker.CardContent">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="@string/random"
+                                    android:textAppearance="?attr/textAppearanceBodyLarge" />
+
+                                <TextView
+                                    android:id="@+id/randomValue"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textAppearance="?attr/textAppearanceLabelLarge"
+                                    android:textColor="?attr/colorPrimary" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:text="@string/random_helper"
+                                android:textAppearance="?attr/textAppearanceBodySmall"
+                                android:textColor="?attr/colorOnSurfaceVariant" />
+
+                            <com.google.android.material.slider.Slider
+                                android:id="@+id/random"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:contentDescription="@string/random"
+                                android:stepSize="1"
+                                android:valueFrom="0"
+                                android:valueTo="100"
+                                app:tickVisible="false" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/settings_footer"
+                        android:textAppearance="?attr/textAppearanceBodySmall"
+                        android:textColor="?attr/colorOnSurfaceVariant" />
+
+                    <!-- Macros -->
+                    <TextView
+                        style="@style/Widget.AutoClicker.SectionTitle"
+                        android:text="@string/section_macros" />
+
+                    <com.google.android.material.card.MaterialCardView style="@style/Widget.AutoClicker.Card">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:paddingHorizontal="16dp"
+                            android:paddingVertical="8dp">
+
+                            <TextView
+                                android:id="@+id/macroEmpty"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingVertical="8dp"
+                                android:text="@string/macro_empty"
+                                android:textAppearance="?attr/textAppearanceBodyMedium"
+                                android:textColor="?attr/colorOnSurfaceVariant" />
+
+                            <LinearLayout
+                                android:id="@+id/macroList"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical" />
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/saveMacro"
+                                style="@style/Widget.Material3.Button.TonalButton.Icon"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginVertical="8dp"
+                                android:text="@string/macro_save"
+                                app:icon="@drawable/ic_save"
+                                app:iconGravity="textStart" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- Help -->
+                    <TextView
+                        style="@style/Widget.AutoClicker.SectionTitle"
+                        android:text="@string/section_help" />
+
+                    <com.google.android.material.card.MaterialCardView style="@style/Widget.AutoClicker.Card">
+
+                        <LinearLayout
+                            android:id="@+id/steps"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:paddingHorizontal="16dp"
+                            android:paddingVertical="8dp" />
+                    </com.google.android.material.card.MaterialCardView>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

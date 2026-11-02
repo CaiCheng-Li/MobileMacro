@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Fallback palette for Android 11 and older. Android 12+ uses the wallpaper colors. -->
+<resources>
+    <color name="primary">#0061A4</color>
+    <color name="on_primary">#FFFFFF</color>
+    <color name="primary_container">#D1E4FF</color>
+    <color name="on_primary_container">#001D36</color>
+    <color name="secondary">#535F70</color>
+    <color name="on_secondary">#FFFFFF</color>
+    <color name="secondary_container">#D7E3F7</color>
+    <color name="on_secondary_container">#101C2B</color>
+    <color name="tertiary">#6B5778</color>
+    <color name="on_tertiary">#FFFFFF</color>
+    <color name="tertiary_container">#F2DAFF</color>
+    <color name="on_tertiary_container">#251431</color>
+    <color name="ic_launcher_background">#0061A4</color>
+</resources>

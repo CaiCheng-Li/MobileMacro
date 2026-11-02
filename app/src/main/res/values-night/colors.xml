@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary">#9ECAFF</color>
+    <color name="on_primary">#003258</color>
+    <color name="primary_container">#00497D</color>
+    <color name="on_primary_container">#D1E4FF</color>
+    <color name="secondary">#BBC7DB</color>
+    <color name="on_secondary">#253140</color>
+    <color name="secondary_container">#3B4858</color>
+    <color name="on_secondary_container">#D7E3F7</color>
+    <color name="tertiary">#D6BEE4</color>
+    <color name="on_tertiary">#3B2948</color>
+    <color name="tertiary_container">#523F5F</color>
+    <color name="on_tertiary_container">#F2DAFF</color>
+</resources>

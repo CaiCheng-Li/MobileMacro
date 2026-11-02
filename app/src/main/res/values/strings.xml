@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Auto Clicker</string>
+    <string name="service_description">Taps and swipes the screen at the points you place, at the timing you choose. It does not read or collect screen content.</string>
+
+    <string name="status_on_title">Service is on</string>
+    <string name="status_on_text">Open the floating controls to place taps and swipes and start the macro.</string>
+    <string name="status_off_title">Service is off</string>
+    <string name="status_off_text">Turn on Auto Clicker in Accessibility settings. Tap here to open them.</string>
+    <string name="action_show_panel">Show floating controls</string>
+    <string name="action_enable">Open Accessibility settings</string>
+
+    <string name="section_timing">Timing</string>
+    <string name="interval">Interval</string>
+    <string name="interval_helper">Wait between actions</string>
+    <string name="random_interval">Random interval</string>
+    <string name="random_interval_helper">Varies each wait</string>
+    <string name="hold">Tap duration</string>
+    <string name="hold_helper">Hold time per tap</string>
+    <string name="swipe_duration">Swipe duration</string>
+    <string name="swipe_duration_helper">Time per swipe</string>
+
+    <string name="section_run">Run</string>
+    <string name="start_delay">Start delay</string>
+    <string name="start_delay_helper">Countdown before start</string>
+    <string name="time_limit">Stop after</string>
+    <string name="time_limit_helper">0 = no time limit</string>
+    <string name="repeat">Repeat cycles</string>
+    <string name="repeat_helper">0 runs until you press stop</string>
+
+    <string name="section_position">Position</string>
+    <string name="random">Random offset</string>
+    <string name="random_helper">Spreads each touch around its marker so it does not hit the same pixel.</string>
+    <string name="settings_footer">Changes save automatically and apply the next time you press play.</string>
+
+    <string name="unit_ms">ms</string>
+    <string name="unit_s">s</string>
+    <string name="unit_px">%d px</string>
+    <string name="plus_minus">±</string>
+
+    <string name="error_number">Enter a number</string>
+    <string name="error_interval">At least 10 ms</string>
+    <string name="error_duration">1 to 60000 ms</string>
+    <string name="error_start_delay">Up to 3600 s</string>
+    <string name="error_name">Enter a name</string>
+
+    <string name="section_macros">Macros</string>
+    <string name="macro_empty">No saved macros yet. Save your current actions and settings to reuse them later.</string>
+    <string name="macro_save">Save current setup</string>
+    <string name="macro_save_title">Save macro</string>
+    <string name="macro_name">Name</string>
+    <string name="macro_default_name">Macro %d</string>
+    <string name="macro_saved">Saved “%s”</string>
+    <string name="macro_loaded">Loaded “%s”</string>
+    <string name="macro_load">Load</string>
+    <string name="macro_delete_title">Delete “%s”?</string>
+    <plurals name="macro_summary">
+        <item quantity="one">%1$d action · every %2$d ms</item>
+        <item quantity="other">%1$d actions · every %2$d ms</item>
+    </plurals>
+
+    <string name="section_help">How to use</string>
+    <string-array name="steps">
+        <item>Turn on the Auto Clicker accessibility service.</item>
+        <item>On the floating panel, use the target button to add a tap and the arrow button to add a swipe. Drag the markers into place.</item>
+        <item>Actions run in number order. Tap a marker to give that action its own delay or duration, or to delete it.</item>
+        <item>Press play to start and stop to end. Drag the bar at the top of the panel to move it.</item>
+        <item>Save setups you use often under Macros and load them later.</item>
+    </string-array>
+
+    <string name="type_tap">Tap</string>
+    <string name="type_swipe">Swipe</string>
+    <string name="edit_title">Action %1$d · %2$s</string>
+    <string name="edit_delay">Delay after</string>
+    <string name="edit_default">Blank uses the default (%d ms)</string>
+    <string name="edit_placeholder">Default</string>
+
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+    <string name="delete">Delete</string>
+
+    <string name="panel_move">Move panel</string>
+    <string name="panel_start">Start</string>
+    <string name="panel_stop">Stop</string>
+    <string name="panel_add_tap">Add tap</string>
+    <string name="panel_add_swipe">Add swipe</string>
+    <string name="panel_remove">Remove last action</string>
+    <string name="panel_hide">Hide panel</string>
+    <string name="run_countdown">%ds</string>
+    <string name="run_cycle">#%d</string>
+    <string name="run_cycle_of">%1$d/%2$d</string>
+    <string name="toast_add_action">Add a tap or swipe first</string>
+    <string name="toast_action_failed">Action failed</string>
+</resources>

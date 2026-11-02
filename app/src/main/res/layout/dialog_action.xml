@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingHorizontal="24dp"
+    android:paddingTop="8dp">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/delayLayout"
+        style="@style/Widget.AutoClicker.Field"
+        android:layout_width="match_parent"
+        android:hint="@string/edit_delay"
+        app:placeholderText="@string/edit_placeholder"
+        app:suffixText="@string/unit_ms">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/delay"
+            style="@style/Widget.AutoClicker.NumberInput"
+            android:maxLength="7" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/durationLayout"
+        style="@style/Widget.AutoClicker.Field"
+        android:layout_width="match_parent"
+        android:layout_marginTop="12dp"
+        app:placeholderText="@string/edit_placeholder"
+        app:suffixText="@string/unit_ms">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/duration"
+            style="@style/Widget.AutoClicker.NumberInput"
+            android:maxLength="5" />
+    </com.google.android.material.textfield.TextInputLayout>
+</LinearLayout>
