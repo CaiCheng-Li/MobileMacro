@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Auto Clicker</string>
-    <string name="service_description">Taps and swipes the screen at the points you place, at the timing you choose. It does not read or collect screen content.</string>
+    <string name="service_description">Taps and swipes the screen at the points you place, at the timing you choose. While its keyboard layout is listening, it reads the keys you press and the mouse movement to turn them into touches; nothing is stored or sent. It does not read or collect screen content.</string>
 
     <string name="status_on_title">Service is on</string>
     <string name="status_on_text">Open the floating controls to place taps and swipes and start the macro.</string>
@@ -59,6 +59,44 @@
         <item quantity="other">%1$d actions · every %2$d ms</item>
     </plurals>
 
+    <string name="section_bridge">Keyboard layout</string>
+    <string name="bridge_info">Press the keyboard button on the floating panel to switch to the keyboard layout. Add key points labelled A, B, C and press play; pressing a point\'s letter taps it. Tap a point to change its key. Holding W, A, S, D or the arrow keys puts a finger down at the joystick\'s center and pushes it toward the edge; letting go lifts it. Put the circle\'s center on the game\'s move stick.</string>
+    <string name="joystick_size">Joystick size</string>
+    <string name="joystick_reach">Joystick reach</string>
+    <string name="joystick_reach_helper">How far the direction keys push the finger toward the edge.</string>
+    <string name="joystick_unsupported">The joystick needs Android 8.0 or newer.</string>
+    <string name="unit_percent">%d%%</string>
+    <string name="mouse_look">Mouse turns the camera</string>
+    <string name="mouse_look_helper">Drag the LOOK point onto the game\'s camera area. Moving the mouse drags from there. The camera can\'t turn while you hold a key: Android hides the mouse from the app while it holds a finger down.</string>
+    <string name="mouse_look_unsupported">The mouse camera needs Android 14 or newer.</string>
+    <string name="mouse_sensitivity">Mouse sensitivity</string>
+    <string name="look_label">LOOK</string>
+    <string name="unit_dp">%d dp</string>
+
+    <string name="section_profiles">Keyboard profiles</string>
+    <string name="profile_empty">No saved profiles yet. Save the keyboard layout (key points, joystick, LOOK point and their settings) to switch between games quickly.</string>
+    <string name="profile_save">Save current layout</string>
+    <string name="profile_save_title">Save profile</string>
+    <string name="profile_edit_title">Edit profile</string>
+    <string name="profile_default_name">Profile %d</string>
+    <string name="profile_replace">Replace with the current layout</string>
+    <string name="profile_saved">Saved profile “%s”</string>
+    <string name="profile_loaded">Loaded profile “%s”</string>
+    <string name="profile_updated">Updated profile “%s”</string>
+    <string name="profile_delete_title">Delete profile “%s”?</string>
+    <string name="profile_overwrite_title">Replace profile “%s”?</string>
+    <string name="profile_overwrite_text">A profile with this name already exists. Saving replaces it with the current layout.</string>
+    <string name="error_name_taken">Another profile has this name</string>
+    <plurals name="profile_keys">
+        <item quantity="one">%d key point</item>
+        <item quantity="other">%d key points</item>
+    </plurals>
+    <string name="profile_joystick">joystick</string>
+    <string name="profile_mouse">mouse camera</string>
+    <string name="profile_separator">" · "</string>
+    <string name="edit">Edit</string>
+    <string name="replace">Replace</string>
+
     <string name="section_help">How to use</string>
     <string-array name="steps">
         <item>Turn on the Auto Clicker accessibility service.</item>
@@ -66,6 +104,7 @@
         <item>Actions run in number order. Tap a marker to give that action its own delay or duration, or to delete it.</item>
         <item>Press play to start and stop to end. Drag the bar at the top of the panel to move it.</item>
         <item>Save setups you use often under Macros and load them later.</item>
+        <item>With a USB or Bluetooth keyboard and mouse, press the keyboard button on the panel, place the key points, the joystick and the LOOK point, then press play.</item>
     </string-array>
 
     <string name="type_tap">Tap</string>
@@ -74,6 +113,9 @@
     <string name="edit_delay">Delay after</string>
     <string name="edit_default">Blank uses the default (%d ms)</string>
     <string name="edit_placeholder">Default</string>
+    <string name="edit_key">Key</string>
+    <string name="edit_key_press">Press a key…</string>
+    <string name="key_point_title">Key point %s</string>
 
     <string name="save">Save</string>
     <string name="cancel">Cancel</string>
@@ -86,6 +128,16 @@
     <string name="panel_add_swipe">Add swipe</string>
     <string name="panel_remove">Remove last action</string>
     <string name="panel_hide">Hide panel</string>
+    <string name="panel_start_listening">Start listening to the keyboard</string>
+    <string name="panel_stop_listening">Stop listening to the keyboard</string>
+    <string name="panel_layout_keys">Switch to the keyboard layout</string>
+    <string name="panel_layout_macro">Switch to the macro</string>
+    <string name="panel_add_key">Add key point</string>
+    <string name="panel_remove_key">Remove last key point</string>
+    <string name="panel_joystick_show">Show joystick</string>
+    <string name="panel_joystick_hide">Hide joystick</string>
+    <string name="toast_add_key">Add a key point or show the joystick first</string>
+    <string name="toast_keys_full">All letters A to Z are in use</string>
     <string name="run_countdown">%ds</string>
     <string name="run_cycle">#%d</string>
     <string name="run_cycle_of">%1$d/%2$d</string>

@@ -36,6 +36,17 @@
         android:layout_height="wrap_content"
         android:text="@string/macro_load" />
 
+    <!-- Shown for profiles. -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/macroEdit"
+        style="@style/Widget.Material3.Button.IconButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/edit"
+        android:visibility="gone"
+        app:icon="@drawable/ic_edit"
+        app:iconTint="?attr/colorOnSurfaceVariant" />
+
     <com.google.android.material.button.MaterialButton
         android:id="@+id/macroDelete"
         style="@style/Widget.Material3.Button.IconButton"

@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<!-- Name dialog for macros and profiles. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:orientation="vertical"
     android:paddingHorizontal="24dp"
     android:paddingTop="8dp">
 
@@ -19,4 +21,13 @@
             android:maxLength="40"
             android:maxLines="1" />
     </com.google.android.material.textfield.TextInputLayout>
-</FrameLayout>
+
+    <!-- Shown when editing a profile. -->
+    <com.google.android.material.checkbox.MaterialCheckBox
+        android:id="@+id/replaceLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/profile_replace"
+        android:visibility="gone" />
+</LinearLayout>

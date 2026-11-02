@@ -303,6 +303,205 @@
                         android:textAppearance="?attr/textAppearanceBodySmall"
                         android:textColor="?attr/colorOnSurfaceVariant" />
 
+                    <!-- Keyboard layout -->
+                    <TextView
+                        style="@style/Widget.AutoClicker.SectionTitle"
+                        android:text="@string/section_bridge" />
+
+                    <com.google.android.material.card.MaterialCardView style="@style/Widget.AutoClicker.Card">
+
+                        <LinearLayout style="@style/Widget.AutoClicker.CardContent">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/bridge_info"
+                                android:textAppearance="?attr/textAppearanceBodyMedium"
+                                android:textColor="?attr/colorOnSurfaceVariant" />
+
+                            <!-- Joystick settings; MainActivity hides them before Android 8.0. -->
+                            <LinearLayout
+                                android:id="@+id/joystickSettings"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="16dp"
+                                    android:gravity="center_vertical"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:text="@string/joystick_size"
+                                        android:textAppearance="?attr/textAppearanceBodyLarge" />
+
+                                    <TextView
+                                        android:id="@+id/joystickSizeValue"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textAppearance="?attr/textAppearanceLabelLarge"
+                                        android:textColor="?attr/colorPrimary" />
+                                </LinearLayout>
+
+                                <com.google.android.material.slider.Slider
+                                    android:id="@+id/joystickSize"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:contentDescription="@string/joystick_size"
+                                    android:stepSize="20"
+                                    android:valueFrom="120"
+                                    android:valueTo="480"
+                                    app:tickVisible="false" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="8dp"
+                                    android:gravity="center_vertical"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:text="@string/joystick_reach"
+                                        android:textAppearance="?attr/textAppearanceBodyLarge" />
+
+                                    <TextView
+                                        android:id="@+id/joystickReachValue"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textAppearance="?attr/textAppearanceLabelLarge"
+                                        android:textColor="?attr/colorPrimary" />
+                                </LinearLayout>
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="2dp"
+                                    android:text="@string/joystick_reach_helper"
+                                    android:textAppearance="?attr/textAppearanceBodySmall"
+                                    android:textColor="?attr/colorOnSurfaceVariant" />
+
+                                <com.google.android.material.slider.Slider
+                                    android:id="@+id/joystickReach"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:contentDescription="@string/joystick_reach"
+                                    android:stepSize="10"
+                                    android:valueFrom="20"
+                                    android:valueTo="100"
+                                    app:tickVisible="false" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/joystickUnsupported"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="12dp"
+                                android:text="@string/joystick_unsupported"
+                                android:textAppearance="?attr/textAppearanceBodySmall"
+                                android:textColor="?attr/colorOnSurfaceVariant"
+                                android:visibility="gone" />
+
+                            <!-- Mouse camera; MainActivity disables it before Android 14. -->
+                            <com.google.android.material.materialswitch.MaterialSwitch
+                                android:id="@+id/mouseLook"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="16dp"
+                                android:text="@string/mouse_look"
+                                android:textAppearance="?attr/textAppearanceBodyLarge" />
+
+                            <TextView
+                                android:id="@+id/mouseLookHelper"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/mouse_look_helper"
+                                android:textAppearance="?attr/textAppearanceBodySmall"
+                                android:textColor="?attr/colorOnSurfaceVariant" />
+
+                            <LinearLayout
+                                android:id="@+id/mouseSensitivityRow"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="12dp"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="@string/mouse_sensitivity"
+                                    android:textAppearance="?attr/textAppearanceBodyLarge" />
+
+                                <TextView
+                                    android:id="@+id/mouseSensitivityValue"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textAppearance="?attr/textAppearanceLabelLarge"
+                                    android:textColor="?attr/colorPrimary" />
+                            </LinearLayout>
+
+                            <com.google.android.material.slider.Slider
+                                android:id="@+id/mouseSensitivity"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:contentDescription="@string/mouse_sensitivity"
+                                android:stepSize="1"
+                                android:valueFrom="1"
+                                android:valueTo="10"
+                                app:tickVisible="false" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- Keyboard profiles -->
+                    <TextView
+                        style="@style/Widget.AutoClicker.SectionTitle"
+                        android:text="@string/section_profiles" />
+
+                    <com.google.android.material.card.MaterialCardView style="@style/Widget.AutoClicker.Card">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:paddingHorizontal="16dp"
+                            android:paddingVertical="8dp">
+
+                            <TextView
+                                android:id="@+id/profileEmpty"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingVertical="8dp"
+                                android:text="@string/profile_empty"
+                                android:textAppearance="?attr/textAppearanceBodyMedium"
+                                android:textColor="?attr/colorOnSurfaceVariant" />
+
+                            <LinearLayout
+                                android:id="@+id/profileList"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical" />
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/saveProfile"
+                                style="@style/Widget.Material3.Button.TonalButton.Icon"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginVertical="8dp"
+                                android:text="@string/profile_save"
+                                app:icon="@drawable/ic_save"
+                                app:iconGravity="textStart" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
                     <!-- Macros -->
                     <TextView
                         style="@style/Widget.AutoClicker.SectionTitle"

@@ -29,7 +29,36 @@
                 android:textAppearance="?attr/textAppearanceHeadlineSmall"
                 android:textColor="?attr/colorOnSurface" />
 
-            <include layout="@layout/dialog_action" />
+            <!-- Shown for macro actions. -->
+            <include
+                android:id="@+id/editorTiming"
+                layout="@layout/dialog_action" />
+
+            <!-- Shown for key points: the key that taps the point. -->
+            <LinearLayout
+                android:id="@+id/editorKeyRow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingHorizontal="24dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/edit_key"
+                    android:textAppearance="?attr/textAppearanceBodyLarge"
+                    android:textColor="?attr/colorOnSurface" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/editorKey"
+                    style="@style/Widget.Material3.Button.TonalButton.Icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:icon="@drawable/ic_keyboard" />
+            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
