@@ -25,12 +25,16 @@ and newer. No root needed.
 
 ## Install
 
-1. Build the APK (see [Build from source](#build-from-source)) and copy it to
-   the device, or install it over USB:
+1. Download the APK from the
+   [latest release](https://github.com/CaiCheng-Li/MobileMacro/releases/latest)
+   and open it on the device, allowing installs from unknown sources if
+   asked. Or install it over USB:
 
    ```bash
-   adb install -r app/build/outputs/apk/release/app-release.apk
+   adb install -r AutoClicker-v1.0.apk
    ```
+
+   You can also build it yourself (see [Build from source](#build-from-source)).
 
 2. Open **Auto Clicker** and tap **Open Accessibility settings**.
 3. Find **Auto Clicker** in the list (sometimes under "Installed apps" or
